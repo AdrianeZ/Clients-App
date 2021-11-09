@@ -1,0 +1,44 @@
+<h2>Lista klientów</h2>
+
+
+{{#if clients}}
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    E-Mail
+                </th>
+                <th>
+                    Imię
+                </th>
+
+                <th>
+                    Data następnego kontaktu
+                </th>
+
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each clients}}
+                <tr>
+                    <td><a href="mailto:{{this.email}}" target="_blank">{{this.email}}</a></td>
+                    <th>{{this.name}}</th>
+                    <td>{{this.nextContactAt}}</td>
+                    <td><a href="/clients/{{this.id}}">Szczegóły</a>
+                        <form method="post" action="/clients/{{this.id}}?_method=DELETE">
+                            <button type="submit">Usuń</button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+{{/if}}
+
+<form action="/clients/form/add">
+    <button type="submit">Add Client</button>
+</form>

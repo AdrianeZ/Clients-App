@@ -1,0 +1,24 @@
+<h2>Dodawanie nowego klienta</h2>
+
+<form action="/clients" method="post">
+
+    <label for="email">
+        <input type="email" id="email" name="email" placeholder="email" required>
+    </label>
+    <br>
+    <label for="name">
+        <input type="text" id="name" name="name" placeholder="name" required>
+    </label>
+    <br>
+    <label for="nextContactAt">
+        <input type="date" id="nextContactAt" name="nextContactAt" placeholder="next contact">
+    </label>
+    <br>
+    <label for="notes">
+        <textarea name="notes" id="notes" placeholder="your notes"></textarea>
+    </label>
+
+    <br>
+    <input type="submit" value="Add client">
+
+</form>
